@@ -4,6 +4,7 @@
 
 void ICACHE_FLASH_ATTR print_info()
 {
+  uart_div_modify(0, UART_CLK_FREQ / 115200);
   os_printf("\r\n\r\n[INFO] BOOTUP...\r\n");
   os_printf("[INFO] SDK: %s\r\n", system_get_sdk_version());
   os_printf("[INFO] Chip ID: %08X\r\n", system_get_chip_id());
